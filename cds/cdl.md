@@ -2030,11 +2030,11 @@ Actions and functions can also be bound to individual entities of a service, enc
 ```cds
 service CatalogService {
   entity Products as projection on data.Products { ... }
-    actions {
-      // bound actions/functions
-      action addRating (stars: Integer);
-      function getViewsCount() returns Integer;
-    }
+  actions {
+    // bound actions/functions
+    action addRating (stars: Integer);
+    function getViewsCount() returns Integer;
+  }
 }
 ```
 
@@ -2046,11 +2046,11 @@ keyword `many` to indicate that the action or function is bound to a collection 
 ```cds
 service CatalogService {
   entity Products as projection on data.Products { ... }
-    actions {
-      // bound actions/functions with explicit binding parameter
-      action A1 (prod: $self, stars: Integer);
-      action A2 (in: many $self);  // bound to collection of Products
-    }
+  actions {
+    // bound actions/functions with explicit binding parameter
+    action A1 (prod: $self, stars: Integer);
+    action A2 (in: many $self);  // bound to collection of Products
+  }
 }
 ```
 
